@@ -4,6 +4,8 @@ import { MongoClient } from 'mongodb';
  * Requires the MongoDB Node.js Driver
  * https://mongodb.github.io/node-mongodb-native
  */
+ 
+// this query needs to run for each global skill metrics that were modified 
 
 const agg = [
   {
@@ -24,6 +26,7 @@ const agg = [
     }
   }, {
     '$addFields': {
+        // these value need to be injected from previous fetch global metrics
       'global_max_ticket_resolved': 100, 
       'global_min_avg_resolution_time': 100
     }
